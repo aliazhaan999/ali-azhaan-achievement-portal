@@ -2,202 +2,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ali Azhaan | Official Achievement Portal</title>
+<meta name="description" content="Explore Ali Azhaan's achievements, certificates, projects and personal journey.">
+<meta name="author" content="Ali Azhaan">
+<meta name="robots" content="index, follow">
+<meta property="og:title" content="Ali Azhaan - Achievement Portal">
+<meta property="og:description" content="My Journey. My Achievements. My Future.">
 
-  <title>Ali Azhaan | Official Achievement Portal</title>
-  <meta name="description" content="Explore Ali Azhaan's personal portfolio, achievements, certificates, projects, interests and journey.">
-  <meta name="keywords" content="Ali Azhaan, Ali Azhaan portfolio, Ali Azhaan achievements, Ali Azhaan projects">
-  <meta name="author" content="Ali Azhaan">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Ali Azhaan | My Achievement Portal">
-  <meta property="og:description" content="My journey. My achievements. My future.">
-  <meta property="og:type" content="website">
-
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: #080808;
-      color: #f5f0e5;
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-    }
-    :root { --gold: #d6ad55; --muted: #aaa; }
-    header {
-      position: sticky; top: 0; z-index: 10;
-      background: rgba(8,8,8,.95);
-      border-bottom: 1px solid #332817;
-      padding: 18px 7%;
-      display: flex; justify-content: space-between;
-      align-items: center; gap: 20px; flex-wrap: wrap;
-    }
-    .logo { color: var(--gold); font-weight: bold; letter-spacing: 2px; }
-    nav { display: flex; gap: 20px; flex-wrap: wrap; }
-    nav a, .admin-link {
-      color: #eee; text-decoration: none; font-size: 14px;
-    }
-    nav a:hover, .admin-link:hover { color: var(--gold); }
-    .hero {
-      min-height: 75vh; padding: 100px 8%;
-      display: flex; flex-direction: column;
-      justify-content: center; align-items: center;
-      text-align: center;
-      background: radial-gradient(ellipse at center, #302416 0%, #080808 65%);
-    }
-    .eyebrow { color: var(--gold); letter-spacing: 5px; font-size: 13px; }
-    h1 { font-size: clamp(42px, 8vw, 78px); margin: 18px 0; }
-    h1 span, h2 span { color: var(--gold); }
-    .hero p { color: #c5c0b5; max-width: 650px; }
-    .button {
-      display: inline-block; margin-top: 28px; padding: 13px 25px;
-      background: var(--gold); color: #111; text-decoration: none;
-      border-radius: 4px; font-weight: bold;
-    }
-    section { padding: 75px 8%; }
-    .section-title { text-align: center; font-size: 34px; margin-bottom: 35px; }
-    .intro {
-      max-width: 800px; margin: auto; text-align: center;
-      color: #c4c0b8;
-    }
-    .grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px; max-width: 1100px; margin: auto;
-    }
-    .card {
-      background: #141310; border: 1px solid #40331e;
-      border-radius: 10px; padding: 25px;
-      transition: .2s;
-    }
-    .card:hover { transform: translateY(-4px); border-color: var(--gold); }
-    .card h3 { color: var(--gold); margin-bottom: 10px; }
-    .card p { color: #bbb; font-size: 14px; }
-    .tag { color: var(--gold); font-size: 12px; }
-    .placeholder {
-      border: 1px dashed #68532d; border-radius: 8px;
-      min-height: 120px; display: grid; place-items: center;
-      color: #9c875d; margin-bottom: 15px; text-align: center;
-    }
-    .contact { text-align: center; background: #11100d; }
-    footer {
-      padding: 25px; text-align: center;
-      border-top: 1px solid #332817; color: #999; font-size: 13px;
-    }
-    .admin-link { border: 1px solid #80632f; padding: 8px 12px; border-radius: 4px; }
-    @media(max-width:650px) {
-      header { justify-content: center; }
-      nav { justify-content: center; }
-      section { padding: 55px 6%; }
-    }
-  </style>
+<style>
+:root{--gold:#d8b15b;--bg:#080808;--panel:#15130f;--muted:#aaa}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:#fff;font-family:Arial,sans-serif;line-height:1.6}
+button,input,textarea,select{font:inherit}
+header{position:sticky;top:0;z-index:5;background:#090909ee;border-bottom:1px solid #44351d;padding:16px 6%;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.logo{color:var(--gold);font-weight:bold;letter-spacing:2px}
+nav{display:flex;gap:15px;flex-wrap:wrap}
+a{color:var(--gold);text-decoration:none}
+nav a{color:white;font-size:13px}
+nav a:hover{color:var(--gold)}
+.hero{min-height:75vh;display:grid;place-content:center;text-align:center;padding:70px 8%;background:radial-gradient(ellipse,#352817,#080808 70%)}
+.hero h1{font-size:clamp(42px,9vw,82px);margin:15px}
+.gold{color:var(--gold)}
+.hero p{color:#ccc}
+.kicker{letter-spacing:5px;color:var(--gold);font-size:12px}
+.btn{display:inline-block;border:0;background:var(--gold);color:#111;padding:12px 20px;border-radius:5px;font-weight:bold;cursor:pointer;margin:8px 4px}
+.btn.secondary{background:transparent;color:var(--gold);border:1px solid var(--gold)}
+section{padding:65px 7%}
+h2{text-align:center;font-size:32px;margin-bottom:30px}
+.about{max-width:800px;margin:auto;text-align:center;color:#ccc}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;max-width:1100px;margin:auto}
+.card{background:var(--panel);border:1px solid #4a3920;border-radius:10px;padding:20px;overflow-wrap:anywhere}
+.card h3{color:var(--gold);margin-bottom:8px}
+.card p{color:#bbb;font-size:14px}
+.card img{width:100%;max-height:210px;object-fit:contain;border-radius:6px;margin-bottom:12px}
+.tag{font-size:12px;color:var(--gold)}
+.contact{text-align:center;background:#111}
+footer{text-align:center;padding:25px;color:#999;border-top:1px solid #44351d}
+#adminPanel{display:none;background:#100e0b;min-height:80vh}
+.admin-wrap{max-width:1050px;margin:auto}
+.admin-box{background:#191610;border:1px solid #574321;border-radius:10px;padding:22px;margin:18px 0}
+input,textarea,select{width:100%;padding:12px;margin:7px 0 14px;background:#090909;color:white;border:1px solid #574321;border-radius:5px}
+textarea{min-height:90px}
+label{color:var(--gold);font-size:13px}
+.item{display:flex;justify-content:space-between;gap:10px;align-items:center;border-bottom:1px solid #44351d;padding:12px 0;flex-wrap:wrap}
+.item button{margin:3px}
+.hidden{display:none!important}
+#message{color:var(--gold);margin-top:10px}
+.profile-pic{width:125px;height:125px;object-fit:cover;border-radius:50%;border:3px solid var(--gold);margin:20px auto}
+@media(max-width:650px){header{justify-content:center}nav{justify-content:center}section{padding:48px 5%}}
+</style>
 </head>
 
 <body>
-  <header>
-    <div class="logo">AA. PORTFOLIO</div>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#achievements">Achievements</a>
-      <a href="#certificates">Certificates</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-      <a class="admin-link" href="#admin">Admin</a>
-    </nav>
-  </header>
+<header>
+  <div class="logo">AA. ACHIEVEMENT PORTAL</div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#achievements">Achievements</a>
+    <a href="#certificates">Certificates</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+    <a href="#adminPanel" onclick="showAdmin()">Admin</a>
+  </nav>
+</header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="eyebrow">WELCOME TO MY DIGITAL WORLD</div>
-      <h1>ALI <span>AZHAAN</span></h1>
-      <p>MY JOURNEY. MY ACHIEVEMENTS. MY FUTURE.</p>
-      <p>A personal space to share my learning, creativity, projects and accomplishments.</p>
-      <a class="button" href="#about">EXPLORE MY JOURNEY</a>
-    </section>
+<main id="publicSite">
+<section class="hero" id="home">
+  <div class="kicker">WELCOME TO MY DIGITAL WORLD</div>
+  <img id="publicPhoto" class="profile-pic hidden" alt="Profile photo">
+  <h1>ALI <span class="gold">AZHAAN</span></h1>
+  <p class="gold">MY JOURNEY. MY ACHIEVEMENTS. MY FUTURE.</p>
+  <p id="heroIntro">Learning, creating, exploring technology and building my future.</p>
+  <a class="btn" href="#achievements">EXPLORE MY JOURNEY</a>
+</section>
 
-    <section id="about">
-      <h2 class="section-title">ABOUT <span>ME</span></h2>
-      <p class="intro">
-        Welcome to my achievement portal. This website is a collection of my
-        educational journey, interests, projects, certificates and future goals.
-        I believe in learning new things, exploring technology and improving
-        through every experience.
-      </p>
-    </section>
+<section id="about">
+  <h2>ABOUT <span class="gold">ME</span></h2>
+  <div class="about">
+    <p id="aboutText">Welcome to my personal achievement portal. This is where I share my learning journey, interests, projects and accomplishments.</p>
+  </div>
+</section>
 
-    <section id="achievements">
-      <h2 class="section-title">MY <span>ACHIEVEMENTS</span></h2>
-      <div class="grid">
-        <article class="card">
-          <div class="placeholder">Add your achievement photo</div>
-          <h3>Achievement One</h3>
-          <p>Add your real achievement and its description here.</p>
-          <div class="tag">Add date and category</div>
-        </article>
-        <article class="card">
-          <div class="placeholder">Add your achievement photo</div>
-          <h3>Achievement Two</h3>
-          <p>Add another achievement when you are ready.</p>
-          <div class="tag">Add date and category</div>
-        </article>
-      </div>
-    </section>
+<section id="achievements">
+  <h2>MY <span class="gold">ACHIEVEMENTS</span></h2>
+  <div class="grid" id="achievementList"></div>
+</section>
 
-    <section id="certificates">
-      <h2 class="section-title">MY <span>CERTIFICATES</span></h2>
-      <div class="grid">
-        <article class="card">
-          <div class="placeholder">Certificate preview</div>
-          <h3>Certificate One</h3>
-          <p>Add the certificate title and details here.</p>
-        </article>
-        <article class="card">
-          <div class="placeholder">Certificate preview</div>
-          <h3>Certificate Two</h3>
-          <p>Add another certificate here.</p>
-        </article>
-      </div>
-    </section>
+<section id="certificates">
+  <h2>MY <span class="gold">CERTIFICATES</span></h2>
+  <div class="grid" id="certificateList"></div>
+</section>
 
-    <section id="projects">
-      <h2 class="section-title">MY <span>PROJECTS</span></h2>
-      <div class="grid">
-        <article class="card">
-          <h3>PROJECT RAKSHAK</h3>
-          <p>Disaster Rescue Rover — add your project description and photographs.</p>
-        </article>
-        <article class="card">
-          <h3>JARVIS AI</h3>
-          <p>Add details about your AI project and its features.</p>
-        </article>
-        <article class="card">
-          <h3>FUTURE PROJECTS</h3>
-          <p>More ideas, experiments and projects coming soon.</p>
-        </article>
-      </div>
-    </section>
+<section id="projects">
+  <h2>MY <span class="gold">PROJECTS</span></h2>
+  <div class="grid" id="projectList"></div>
+</section>
 
-    <section id="contact" class="contact">
-      <h2 class="section-title">GET IN <span>TOUCH</span></h2>
-      <p class="intro">Thank you for visiting my achievement portal.</p>
-    </section>
+<section class="contact" id="contact">
+  <h2>GET IN <span class="gold">TOUCH</span></h2>
+  <p>For project-related enquiries:</p>
+  <p><a id="emailLink" href="mailto:aliazhaan999@gmail.com">aliazhaan999@gmail.com</a></p>
+  <p id="contactMessage">Thank you for visiting my website.</p>
+</section>
+</main>
 
-    <section id="admin">
-      <h2 class="section-title">ADMIN <span>ACCESS</span></h2>
-      <p class="intro">
-        The secure administrator dashboard will be connected after the
-        backend authentication setup. This public page does not store passwords.
-      </p>
-    </section>
-  </main>
+<section id="adminPanel">
+<div class="admin-wrap">
+  <h2>ADMIN <span class="gold">DASHBOARD</span></h2>
 
-  <footer>
-    © <span id="year"></span> Ali Azhaan. All rights reserved.
-    <br>My Journey. My Achievements. My Future.
-  </footer>
+  <div class="admin-box" id="setupBox">
+    <h3 class="gold">Create your admin password</h3>
+    <p>First-time setup on this browser. Choose a new password that you have not shared elsewhere.</p>
+    <label>New password</label>
+    <input type="password" id="newPass" autocomplete="new-password">
+    <label>Confirm password</label>
+    <input type="password" id="confirmPass" autocomplete="new-password">
+    <button class="btn" onclick="setupAdmin()">CREATE ADMIN ACCESS</button>
+    <p id="setupMessage"></p>
+  </div>
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+  <div class="admin-box hidden" id="loginBox">
+    <h3 class="gold">Administrator Login</h3>
+    <label>Password</label>
+    <input type="password" id="loginPass" autocomplete="current-password">
+    <button class="btn" onclick="login()">LOGIN</button>
+    <p id="loginMessage"></p>
+  </div>
+
+  <div class="hidden" id="dashboard">
+    <div class="admin-box">
+      <h3 class="gold">Profile settings</h3>
+      <label>Introduction</label>
+      <textarea id="editIntro"></textarea>
+      <label>About me</label>
+      <textarea id="editAbout"></textarea>
+      <label>Profile photo</label>
+      <input type="file" id="photoFile" accept="image/*">
+      <label>Contact email</label>
+      <input id="editEmail" type="email">
+      <button class="btn" onclick="saveProfile()">SAVE PROFILE</button>
+    </div>
+
+    <div class="admin-box">
+      <h3 class="gold">Manage website content</h3>
+      <label>Content type</label>
+      <select id="contentType">
+        <option value="achievements">Achievement</option>
+        <option value="certificates">Certificate</option>
+        <option value="projects">Project</option>
+      </select>
+      <label>Title</label>
+      <input id="itemTitle" placeholder="Enter title">
+      <label>Description</label>
+      <textarea id="itemDescription" placeholder="Enter description"></textarea>
+      <label>Date or category</label>
+      <input id="itemDate" placeholder="Optional">
+      <label>Photo or certificate file</label>
+      <input type="file" id="itemFile" accept="image/*,.pdf">
+      <button class="btn" onclick="addItem()">ADD TO WEBSITE</button>
+      <p id="itemMessage"></p>
+    </div>
+
+    <div class="admin-box">
+      <h3 class="gold">Existing content</h3>
+      <div id="manageList"></div>
+    </div>
+
+    <button class="btn secondary" onclick="logout()">LOG OUT</button>
+  </div>
+</div>
+</section>
+
+<footer>© <span id="year"></span> Ali Azhaan. All rights reserved.</footer>
+
+<script>
+const $ = id => document.getElementById(id);
+const STORE = "ali_azhaan_portal_data_v1";
+const AUTH = "ali_azhaan_local_admin_hash";
+
+let data = JSON.parse(localStorage.getItem(STORE) || "null") || {
+  intro:"Learning, creating, exploring technology and building my future.",
+  about:"Welcome to my personal achievement portal. This is where I share my learning journey, interests, projects and accomplishments.",
+  email:"aliazhaan999@gmail.com",
+  photo:"",
+  achievements:[],
+  certificates:[],
+  projects:[
+    {title:"PROJECT RAKSHAK",description:"Disaster Rescue Rover project.",date:"Student project",file:""},
+    {title:"JARVIS AI",description:"An AI project. More details coming soon.",date:"Technology",file:""}
+  ]
+};
+
+function saveData(){
+  try{
+    localStorage.setItem(STORE,JSON.stringify(data));
+    render();
+  }catch(e){
+    alert("Browser storage is full. Try using smaller images.");
+  }
+}
+
+function escapeHTML(s=""){
+  return String(s).replace(/[&<>"']/g,c=>({
+    "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"
+  }[c]));
+}
+
+function renderList(type,id){
+  $(id).innerHTML=data[type].map((item,i)=>`
+    <article class="card">
+      ${item.file ? (item.file.startsWith("data:image/") ?
+        `<img src="${item.file}" alt="${escapeHTML(item.title)}">` :
+        item.file.startsWith("data:application/pdf") ?
+        `<a class="btn secondary" href="${item.file}" target="_blank">VIEW PDF</a>` : "") : ""}
+      <h3>${escapeHTML(item.title)}</h3>
+      <p>${escapeHTML(item.description)}</p>
+      <div class="tag">${escapeHTML(item.date||"")}</div>
+    </article>
+  `).join("") || '<p class="about">No content added yet.</p>';
+}
+
+function render(){
+  $("heroIntro").textContent=data.intro;
+  $("aboutText").textContent=data.about;
+  $("emailLink").textContent=data.email;
+  $("emailLink").href="mailto:"+data.email;
+  $("publicPhoto").src=data.photo;
+  $("publicPhoto").classList.toggle("hidden",!data.photo);
+  renderList("achievements","achievementList");
+  renderList("certificates","certificateList");
+  renderList("projects","projectList");
+  $("editIntro").value=data.intro;
+  $("editAbout").value=data.about;
+  $("editEmail").value=data.email;
+  renderManage();
+}
+
+function renderManage(){
+  const types=["achievements","certificates","projects"];
+  $("manageList").innerHTML=types.map(type=>`
+    <h3 class="gold">${type.toUpperCase()}</h3>
+    ${data[type].map((item,i)=>`
+      <div class="item">
+        <span>${escapeHTML(item.title)}</span>
+        <span>
+          <button class="btn secondary" onclick="editItem('${type}',${i})">EDIT</button>
+          <button class="btn secondary" onclick="deleteItem('${type}',${i})">DELETE</button>
+        </span>
+      </div>`).join("")}
+  `).join("");
+}
+
+async function hashPassword(password){
+  const bytes=new TextEncoder().encode(password);
+  const hash=await crypto.subtle.digest("SHA-256",bytes);
+  return Array.from(new Uint8Array(hash)).map(b=>b.toString(16).padStart(2,"0")).join("");
+}
+
+async function setupAdmin(){
+  const a=$("newPass").value,b=$("confirmPass").value;
+  if(a.length<12){$("setupMessage").textContent="Use at least 12 characters.";return;}
+  if(a!==b){$("setupMessage").textContent="Passwords do not match.";return;}
+  localStorage.setItem(AUTH,await hashPassword(a));
+  $("setupMessage").textContent="Local demo password created. Please log in.";
+  updateAuthView();
+}
+
+async function login(){
+  const saved=localStorage.getItem(AUTH);
+  const entered=await hashPassword($("loginPass").value);
+  if(saved && entered===saved){
+    sessionStorage.setItem("ali_admin_demo","yes");
+    $("loginMessage").textContent="";
+    updateAuthView();
+  }else{
+    $("loginMessage").textContent="Incorrect password.";
+  }
+}
+
+function logout(){
+  sessionStorage.removeItem("ali_admin_demo");
+  updateAuthView();
+}
+
+function updateAuthView(){
+  const authenticated=sessionStorage.getItem("ali_admin_demo")==="yes";
+  $("setupBox").classList.toggle("hidden",!!localStorage.getItem(AUTH));
+  $("loginBox").classList.toggle("hidden",!localStorage.getItem(AUTH)||authenticated);
+  $("dashboard").classList.toggle("hidden",!authenticated);
+  if(authenticated)render();
+}
+
+function showAdmin(){
+  $("adminPanel").style.display="block";
+  updateAuthView();
+}
+
+function readFile(file){
+  return new Promise((resolve,reject)=>{
+    if(!file){resolve("");return;}
+    if(file.size>900000){reject(new Error("Please choose a file smaller than 900 KB for this local demo."));return;}
+    const reader=new FileReader();
+    reader.onload=()=>resolve(reader.result);
+    reader.onerror=reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+async function saveProfile(){
+  try{
+    data.intro=$("editIntro").value;
+    data.about=$("editAbout").value;
+    data.email=$("editEmail").value;
+    if($("photoFile").files[0])data.photo=await readFile($("photoFile").files[0]);
+    saveData();
+    alert("Profile saved in this browser.");
+  }catch(e){alert(e.message);}
+}
+
+async function addItem(){
+  try{
+    const type=$("contentType").value;
+    const title=$("itemTitle").value.trim();
+    if(!title){$("itemMessage").textContent="Please enter a title.";return;}
+    const file=await readFile($("itemFile").files[0]);
+    data[type].push({
+      title,
+      description:$("itemDescription").value,
+      date:$("itemDate").value,
+      file
+    });
+    saveData();
+    $("itemTitle").value="";
+    $("itemDescription").value="";
+    $("itemDate").value="";
+    $("itemFile").value="";
+    $("itemMessage").textContent="Added successfully.";
+  }catch(e){$("itemMessage").textContent=e.message;}
+}
+
+function editItem(type,index){
+  const item=data[type][index];
+  const title=prompt("Edit title:",item.title);
+  if(title===null)return;
+  const description=prompt("Edit description:",item.description);
+  if(description===null)return;
+  const date=prompt("Edit date/category:",item.date||"");
+  if(date===null)return;
+  item.title=title;
+  item.description=description;
+  item.date=date;
+  saveData();
+}
+
+function deleteItem(type,index){
+  if(confirm("Delete this item?")){
+    data[type].splice(index,1);
+    saveData();
+  }
+}
+
+$("year").textContent=new Date().getFullYear();
+render();
+updateAuthView();
+</script>
 </body>
 </html>
